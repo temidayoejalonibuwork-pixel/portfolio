@@ -89,7 +89,43 @@ nav a.active {
   border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
+/* SOCIAL LINKS */
+.social-links {
+  display: flex;
+  justify-content: flex-start;   /* change to center if you want them centered */
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
 
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.social-links img {
+  width: 32px;
+  height: 32px;
+  display: block;                /* removes inline spacing quirks */
+  transition: transform 0.3s;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
+}
+
+/* Remove any default ticks or visited styles */
+.social-links a:focus,
+.social-links a:visited {
+  outline: none;
+  border: none;
+}
+
+.social-links a:visited img {
+  filter: none; /* prevents odd color changes on visited links */
+}
 /* PROJECTS */
 .content-box { max-width: 600px; text-align: left; }
 .projects-list { list-style-type: none; margin-top: 20px; line-height: 1.8; font-size: 1.1rem; color: #333; }
@@ -127,3 +163,4 @@ button:hover { background:#005f8a; }
   .hero-text p { font-size: 1rem; }
   form input, form textarea { font-size: 0.9rem; }
 }
+
