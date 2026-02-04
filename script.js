@@ -9,19 +9,30 @@ if (form) {
   });
 }
 
-// GSAP stacked scroll effect
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+// GSAP animations (no pinning, just fade/slide on scroll)
+gsap.registerPlugin(ScrollTrigger);
 
+gsap.from(".hero-text h2", { duration: 1, y: -50, opacity: 0 });
+gsap.from(".hero-text h3", { duration: 1, y: -50, opacity: 0, delay: 0.3 });
+gsap.from(".hero-text p", { duration: 1, y: -50, opacity: 0, delay: 0.6 });
+gsap.from(".hero-image img", { duration: 1, scale: 0.8, opacity: 0, delay: 1 });
+
+// Animate sections when they scroll into view
 gsap.utils.toArray(".panel").forEach(panel => {
-  ScrollTrigger.create({
-    trigger: panel,
-    start: "top top",
-    pin: true,
-    pinSpacing: false
+  gsap.from(panel, {
+    scrollTrigger: {
+      trigger: panel,
+      start: "top 80%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1
   });
 });
 
-// Smooth nav scrolling with GSAP ScrollTo
+// Smooth nav scrolling
+gsap.registerPlugin(ScrollToPlugin);
 const navLinks = document.querySelectorAll("nav a");
 navLinks.forEach(link => {
   link.addEventListener("click", e => {
