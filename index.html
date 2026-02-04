@@ -5,11 +5,6 @@
   <title>Temidayo | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-
-  <!-- GSAP CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 </head>
 <body>
 
@@ -22,65 +17,58 @@
     </nav>
   </header>
 
-  <div class="panels">
-
-    <!-- Hero Section -->
-    <section class="panel hero" id="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h2>Hello</h2>
-          <h3>I am Temidayo Ejalonibu</h3>
-          <p>A web developer passionate about building clean and functional websites.</p>
-          <a href="#projects" class="cta-button">View Projects ↓</a>
-          <div class="social-links">
-            <a href="https://github.com/temidayoejalonibuwork-pixel" target="_blank">
-              <img src="icons8-github-logo-24.png" alt="GitHub">
-            </a>
-            <a href="https://linkedin.com/in/temidayo-a-ejalonibu-2367453a9" target="_blank">
-              <img src="icons8-linkedin-48.png" alt="LinkedIn">
-            </a>
-            <a href="https://twitter.com/T_ejalonibu" target="_blank">
-              <img src="icons8-x-30.png" alt="Twitter/X">
-            </a>
-            <a href="mailto:temidayoejalonibu.work@gmail.com">
-              <img src="icons8-gmail-48.png" alt="Email">
-            </a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="Round Glasses Meme.jpg" alt="Temidayo avatar">
+  <section class="panel hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h2>Hello</h2>
+        <h3>I am Temidayo Ejalonibu</h3>
+        <p>A web developer passionate about building clean and functional websites.</p>
+        <a href="#projects" class="cta-button">View Projects ↓</a>
+        <div class="social-links">
+          <a href="https://github.com/temidayoejalonibuwork-pixel" target="_blank">
+            <img src="icons8-github-logo-24.png" alt="GitHub">
+          </a>
+          <a href="https://linkedin.com/in/temidayo-a-ejalonibu-2367453a9" target="_blank">
+            <img src="icons8-linkedin-48.png" alt="LinkedIn">
+          </a>
+          <a href="https://twitter.com/T_ejalonibu" target="_blank">
+            <img src="icons8-x-30.png" alt="Twitter/X">
+          </a>
+          <a href="mailto:temidayoejalonibu.work@gmail.com">
+            <img src="icons8-gmail-48.png" alt="Email">
+          </a>
         </div>
       </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="panel" id="projects">
-      <div class="content-box">
-        <h2>Projects</h2>
-        <ul class="projects-list">
-          <li>Portfolio Website</li>
-          <li>Coffee Ordering Website</li>
-          <li>Football Graph Website</li>
-          <li>Car Rental Website</li>
-        </ul>
+      <div class="hero-image">
+        <img src="Round Glasses Meme.jpg" alt="Temidayo avatar">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="panel" id="contact">
-      <div class="content-box">
-        <h2>Contact Me</h2>
-        <form id="contactForm" action="https://formspree.io/f/xbdknvrp" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-        <p id="message"></p>
-      </div>
-    </section>
+  <section class="panel" id="projects">
+    <div class="content-box">
+      <h2>Projects</h2>
+      <ul class="projects-list">
+        <li>Portfolio Website</li>
+        <li>Coffee Ordering Website</li>
+        <li>Football Graph Website</li>
+        <li>Car Rental Website</li>
+      </ul>
+    </div>
+  </section>
 
-  </div>
+  <section class="panel" id="contact">
+    <div class="content-box">
+      <h2>Contact Me</h2>
+      <form id="contactForm" action="https://formspree.io/f/xbdknvrp" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="message"></p>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
