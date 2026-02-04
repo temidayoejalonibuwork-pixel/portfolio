@@ -1,11 +1,31 @@
-// Contact form feedback
+// Contact form feedback with Formspree
 const form = document.getElementById("contactForm");
 const message = document.getElementById("message");
+
 if (form) {
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", async e => {
     e.preventDefault();
-    message.textContent = "Message sent successfully!";
-    form.reset();
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        message.textContent = "Message sent successfully!";
+        message.style.color = "green";
+        form.reset();
+      } else {
+        message.textContent = "Oops, something went wrong. Please try again.";
+        message.style.color = "red";
+      }
+    } catch (error) {
+      message.textContent = "Network error. Please try again.";
+      message.style.color = "red";
+    }
   });
 }
 
@@ -29,4 +49,3 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
