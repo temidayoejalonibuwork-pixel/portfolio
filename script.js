@@ -9,45 +9,10 @@ if (form) {
   });
 }
 
-// GSAP animations (no pinning, just fade/slide on scroll)
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".hero-text h2", { duration: 1, y: -50, opacity: 0 });
-gsap.from(".hero-text h3", { duration: 1, y: -50, opacity: 0, delay: 0.3 });
-gsap.from(".hero-text p", { duration: 1, y: -50, opacity: 0, delay: 0.6 });
-gsap.from(".hero-image img", { duration: 1, scale: 0.8, opacity: 0, delay: 1 });
-
-// Animate sections when they scroll into view
-gsap.utils.toArray(".panel").forEach(panel => {
-  gsap.from(panel, {
-    scrollTrigger: {
-      trigger: panel,
-      start: "top 80%",
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    y: 50,
-    duration: 1
-  });
-});
-
-// Smooth nav scrolling
-gsap.registerPlugin(ScrollToPlugin);
-const navLinks = document.querySelectorAll("nav a");
-navLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href");
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: targetId,
-      ease: "power2.inOut"
-    });
-  });
-});
-
 // Active nav highlighting
 const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach(section => {
